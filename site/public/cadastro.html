@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorCode</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <img src="assets/imgs/moto-logo.png" alt="">
+        <div class="container">
+            <ul>
+                <li> <a href="index.html"> Home</a></li>
+                <li> <a href="sobre nós.html"> Sobre nós</a></li>
+                |
+                <!-- <li> <a class="agora" href="#"> Cadastro</a></li> -->
+                <li> <a href="login.html"> Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="motinha">
+        <img src="assets/imgs/oie_50256ARCANd76.gif" style="width: 50vw; height: 100vh;" alt="">
+        </div>
+
+        <!-- CARD DE AVISO DE ERRO -->
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+
+
+<div class="background">
+    <div class="card" >
+        <div class="conteudo" >
+            <select name="" id="select_cadastro">
+                <option value="">--TIPO DE CADASTRO--</option>
+                <option value="Usuario">Usuário</option>
+                <option value="Motoclube">Moto Clube</option>
+            </select>
+            <p>Nome:</p> 
+            <input id="nome_input" type="text" placeholder="digite o nome" >
+            <p>CPF:</p>
+            <input id="cpf_input" type="text" placeholder="CPF do representante" >
+            <p>E-mail:</p>
+            <input id="email_input" type="text" placeholder="digite o e-mail" >
+            <p>Senha:</p>
+            <input id="senha_input" type="password" placeholder="digite a senha" >
+            <p>Confirme a senha:</p>
+            <input id="confirmacao_senha_input" type="password" placeholder="digite a senha" >
+            
+            <button onclick="cadastrar()" >Cadastrar</button>
+            <p class="cor">Já tem uma conta? &nbsp;<a href="login.html">Logar</a></p>
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/aguarde-orange.gif" id="loading-gif">
+            </div>
+
+        </div>
+    </div>
+</div>    
+</body>
+</html>
+<script>
+
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var tipoVar = select_cadastro.value;
+        var nomeVar = nome_input.value;
+        var cpfVar = cpf_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                tipoServer: tipoVar,
+                nomeServer: nomeVar,
+                cpfServer: cpfVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

@@ -8,6 +8,7 @@ body{
 }
 .background{
     background-color: rgb(221, 71, 7);
+    height: 900px;
 }
 
 .header{
@@ -71,7 +72,8 @@ ul a{
     background: rgba(3, 3, 3, 0.889);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    
+    margin-top: 40%;
+    height: 130%;
 }
 /* .conteudo p{
     font-size: 20px;
@@ -173,3 +175,7 @@ select{
     flex-direction: column;
     align-items: center;
 } */
+
+.loading-div{
+    margin-left: -15%;
+}
