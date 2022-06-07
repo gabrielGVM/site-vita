@@ -22,6 +22,7 @@ header */
     justify-content: space-evenly;
     list-style:none;
     text-shadow: 3px 3px 5px #d76112;
+    margin-left: -10%;
 }
 
 .header img{
@@ -257,10 +258,11 @@ img{
 
 /* frase em baixo do embaçado */
 p{
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
-    text-shadow: 1px 1px 5px white;
+    color: white;
+    text-shadow: 3px 3px 4px  #d76112;
 }
 p a{
     font-size: 20px;

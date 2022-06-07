@@ -8,6 +8,12 @@
     
     <link rel="stylesheet" href="../css/style.css">
 
+    <script src="js/funcoes.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="simulador.css">
+
     <link rel="stylesheet" href="../dashboard/dashboard.css">
 
     <script src="../js/funcoes.js"></script>
@@ -22,7 +28,7 @@
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body onload="validarSessao(), atualizarFeed(), VerificaAvaliacao()" style="background-color: #161618;">
 
       <!-- <div class="homeContainer">  -->
     <!-- <div class="container-texto-fogo"> -->
@@ -68,7 +74,7 @@
                 </li>
               </ul>
             </div>
-          </section>
+        </section>
             <br><br><br><br><br><br><br><br><br>
 
     <div class="janela">
@@ -95,7 +101,7 @@
                 </a>
             </div>
             <div class="btn-nav-white">
-                <a href="#">
+                <a href="">
                     <h3>Simulador</h3>
                 </a>
             </div>
@@ -175,6 +181,42 @@
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
+                        <div id="simulador">
+                            <div class="card">
+                                    <h2>Simulador</h2>
+                                    <h3>Preencha:</h3>
+                                    <h3>Pessoas</h3>
+                                    <input id="pessoas_input" type="number" placeholder="Quantidade de pessoas" />
+                                    <h3>Valor</h3>
+                                    <input id="dinheiro" type="text" placeholder="Preço" />
+                                    <button class="btn" onclick="mostrar()">Simular</button><br>
+                                    <span id="valores"></span>
+                            </div>
+
+                            <a href="javascript:void(0)" onclick="Avaliar(1)">
+                                <img src="../assets/imgs/star0.png" id="s1"></a>
+                        
+                            <a href="javascript:void(0)" onclick="Avaliar(2)">
+                                <img src="../assets/imgs/star0.png" id="s2"></a>
+                        
+                            <a href="javascript:void(0)" onclick="Avaliar(3)">
+                                <img src="../assets/imgs/star0.png" id="s3"></a>
+                        
+                            <a href="javascript:void(0)" onclick="Avaliar(4)">
+                                <img src="../assets/imgs/star0.png" id="s4"></a>
+                        
+                            <a href="javascript:void(0)" onclick="Avaliar(5)">
+                                <img src="../assets/imgs/star0.png" id="s5"></a>
+                            <p id="rating">0</p>
+                        
+                        
+                            <br><br><br>
+                        
+                            <div class="graficos">
+                                <canvas id="myChart" width="20" height="20"></canvas>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -194,10 +236,12 @@
             <!-- AGUARDAR -->
             <div id="div_aguardar" class="div-aguardar">
                 <img src="../assets/aguarde-orange.gif" id="img_aguarde">
-            </div> 
-
+            </div>
         </div>
     </div>  
+
+    
+    
 </body>
 </html>
 <script>
@@ -410,5 +454,166 @@
 
         return false;
     }
+
+    function mostrar() {
+        var pessoas = Number(pessoas_input.value);
+        var valor = Number(dinheiro.value);
+        var total = pessoas * valor;
+        valores.innerHTML = `O valor total dos ingressos ficará R$ ${total.toFixed(2)}`;
+
+    }
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['5 Estrelas', '4 Estrelas', '3 Estrelas', '2 Estrelas', '1 Estrela'],
+            datasets: [{
+                label: 'Quantidade de votos',
+                data: [12, 10, 2, 1, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    function Avaliar(estrela) {
+
+var url = window.location;
+url = url.toString()
+url = url.split("index.html");
+url = url[0];
+
+var s1 = document.getElementById("s1").src;
+var s2 = document.getElementById("s2").src;
+var s3 = document.getElementById("s3").src;
+var s4 = document.getElementById("s4").src;
+var s5 = document.getElementById("s5").src;
+avaliacao = 0;
+
+if (estrela == 5){        
+if (s5 == url + "img/star0.png") {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star1.png";
+    document.getElementById("s4").src = "../assets/imgs/star1.png";
+    document.getElementById("s5").src = "../assets/imgs/star1.png";
+    avaliacao = 5;
+} else {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star1.png";
+    document.getElementById("s4").src = "../assets/imgs/star1.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 4;
+}}
+
+//ESTRELA 4
+if (estrela == 4){  
+if (s4 == url + "img/star0.png") {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star1.png";
+    document.getElementById("s4").src = "../assets/imgs/star1.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 4;
+} else {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star1.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 3;
+}}
+
+//ESTRELA 3
+if (estrela == 3){  
+if (s3 == url + "img/star0.png") {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star1.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 3;
+} else {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star0.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 2;
+}}
+
+//ESTRELA 2
+if (estrela == 2){  
+if (s2 == url + "img/star0.png") {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star1.png";
+    document.getElementById("s3").src = "../assets/imgs/star0.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 2;
+} else {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star0.png";
+    document.getElementById("s3").src = "../assets/imgs/star0.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 1;
+}}
+
+//ESTRELA 1
+if (estrela == 1){  
+if (s1 == url + "img/star0.png") {
+    document.getElementById("s1").src = "../assets/imgs/star1.png";
+    document.getElementById("s2").src = "../assets/imgs/star0.png";
+    document.getElementById("s3").src = "../assets/imgs/star0.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 1;
+} else {
+    document.getElementById("s1").src = "../assets/imgs/star0.png";
+    document.getElementById("s2").src = "../assets/imgs/star0.png";
+    document.getElementById("s3").src = "../assets/imgs/star0.png";
+    document.getElementById("s4").src = "../assets/imgs/star0.png";
+    document.getElementById("s5").src = "../assets/imgs/star0.png";
+    avaliacao = 0;
+}}
+
+document.getElementById('rating').innerHTML = avaliacao;
+localStorage.setItem('avaliacao', avaliacao);
+}
+
+
+function VerificaAvaliacao()
+{
+if (localStorage.getItem('avaliacao') != null)
+{
+Avaliar(localStorage.getItem('avaliacao'));
+}
+
+}
 
 </script>

@@ -8,7 +8,7 @@ body{
 }
 .background{
     background-color: rgb(221, 71, 7);
-    height: 900px;
+    height: 950px;
 }
 
 .header{
@@ -52,7 +52,7 @@ ul a{
 
 .card{
     width: 50vw;
-    height: 100vh;
+    height: 90vh;
     margin-left: 50%;
     display: flex;
     justify-content: center;
@@ -123,6 +123,15 @@ button{
     background-image: linear-gradient( to right, rgb(12, 12, 12), transparent, rgb(208, 93, 5) ); 
 }
 
+/* button:hover {
+    background: none;
+    color: orangered;
+}
+
+button:active {
+    background-color: rgb(224, 224, 224);
+} */
+
 select{
     width: 50%;
     height: 30px;
@@ -176,6 +185,15 @@ select{
     align-items: center;
 } */
 
-.loading-div{
-    margin-left: -15%;
+.loading-div {
+    width: 50px;
+    margin: auto;
+    margin-top: 5px;
+    display: none;
+    justify-content: center;
+}
+  
+.loading-div img {
+    height: 50px;
+    width: 50px;
 }

@@ -9,7 +9,7 @@ function listar() {
             e.nomeEvento,
             e.rua,
             e.cep,
-            e.dt,
+            DATE_FORMAT(dt, '%d/%m/%y') as dt,
             e.hora,
             e.preco,
             e.contato,
