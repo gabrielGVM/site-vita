@@ -66,13 +66,7 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var organizador = req.body.organizador;
-    var evento = req.body.evento;
-    var rua = req.body.rua;
-    var cep = req.body.cep;
-    var data = req.body.data;
-    var hora = req.body.hora;
-    var preco = req.body.preco;
+    var nome = req.body.nome;
     var contato = req.body.contato;
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
@@ -84,7 +78,7 @@ function publicar(req, res) {
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(organizador, evento, rua, cep, data, hora, preco, contato, descricao, idUsuario)
+        avisoModel.publicar(nome, contato, descricao, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -102,9 +96,9 @@ function publicar(req, res) {
 
 function editar(req, res) {
     var novaDescricao = req.body.descricao;
-    var idEvento = req.params.idEvento;
+    var idforum = req.params.idforum;
 
-    avisoModel.editar(novaDescricao, idEvento)
+    avisoModel.editar(novaDescricao, idforum)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -121,9 +115,9 @@ function editar(req, res) {
 }
 
 function deletar(req, res) {
-    var idEvento = req.params.idEvento;
+    var idUsuario = req.params.idUsuario;
 
-    avisoModel.deletar(idEvento)
+    avisoModel.deletar(idUsuario)
         .then(
             function (resultado) {
                 res.json(resultado);

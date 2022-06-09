@@ -4,263 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotorCode | Publicar evento</title>
-    
-    <link rel="stylesheet" href="../css/style.css">
-
-    <script src="js/funcoes.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <link rel="stylesheet" href="simulador.css">
-
-    <link rel="stylesheet" href="../dashboard/dashboard.css">
-
-    <script src="../js/funcoes.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.4/dist/css/splide.min.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.4/dist/js/splide.min.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <title>DigitalScience</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
 </head>
-<body onload="validarSessao(), atualizarFeed(), VerificaAvaliacao()" style="background-color: #161618;">
-
-      <!-- <div class="homeContainer">  -->
-    <!-- <div class="container-texto-fogo"> -->
-    
-        <section id="main" class="splide" aria-label="Carrossel da Introdução">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide">
-                  <img src="../assets/imgs/Abutres.jpg" alt="" />
-                  <div class="text-block-1">
-                    <a href="#sobrenos">
-                      <h1>
-                        MotorCode
-                      </h1>
-                    </a>
-                    <!-- <p>
-                      Aperture Science™ é a líder em inovação científica,<br />
-                      e queremos você para nos ajudar a atingir nosso objetivo!
-                    </p> -->
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <img src="../assets/imgs/bikers-from-hell-motoclube.jpg" alt="" />
-                  <div class="text-block-2">
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <img src="../assets/imgs/brutus.jpg" alt="" />
-                  <div class="text-block-3">
-                    <h2>
-                    </h2>
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <img src="../assets/imgs/crowa-together-we-fly-motoclube.jpg" alt="" />
-                  <div class="text-block-4">
-                  </div>
-                </li>
-                <li class="splide__slide">
-                  <img src="../assets/imgs/arrasta-corrente-motoclube.jpg" alt="" />
-                  <div class="text-block-5">
-                  </div>
-                </li>
-              </ul>
+<body onload="validarSessao(), atualizarFeed(), VerificaAvaliacao()">
+    <div class="header">
+        <div class="container-dash">
+            <div class="logo_header">
+                <img src="../imagens/icone2.png" alt="" >
+                <h1>Digital<br>Science</h1>
             </div>
-        </section>
-            <br><br><br><br><br><br><br><br><br>
-
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>MotorCode</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            
-            <div class="btn-nav-white">
-                <a href="dashboard.html">
-                    <h3>Filliados</h3>
-                </a>
-            </div>
-            
-            <div class="btn-nav-white">
-                <a href="#">
-                    <h3>Mural de Eventos</h3>
-                </a>
-            </div>
-            <div class="btn-nav-white">
-                <a href="">
-                    <h3>Simulador</h3>
-                </a>
-            </div>
-            
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+            <ul>
+                <li>SAIR</li>
+            </ul>
         </div>
+    </div>
 
-        <div class="dash-right">
+<div class="fundo-card">    
+    <div class="card">
+        <li><a href="">|</a></li>
+        <li><a href="">Oceanos</a></li>
+        <li><a href="">|</a></li>
+        <li><a href="">Buraco Negro</a></li>
+        <li><a href="">|</a></li>
+        <li><a href="">Nikola Tesla</a></li>
+        <li><a href="">|</a></li>
+        <li><a href="">Bobina de Tesla</a></li>
+        <li><a href="">|</a></li>
+        <li><a href="">Albert Einstein</a></li>
+        <li><a href="">|</a></li>
+        <li><a href="">Teoria da relatividade</a></li>
+    </div> 
+</div><br><br>
 
-            <div class="avisos">
-                <div class="container">
-                    <h1>Publicar um evento</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                <label>
-                                    Nome do Organizador:
-                                    <br>
-                                    <input name="organizador" id="organizador" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Nome do evento:
-                                    <br>
-                                    <input name="evento" id="evento" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Rua:
-                                    <br>
-                                    <input name="rua" id="rua" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    CEP:
-                                    <br>
-                                    <input name="cep" id="cep" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Data:
-                                    <br>
-                                    <input name="data" id="data" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Hora:
-                                    <br>
-                                    <input name="hora" id="hora" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Preço:
-                                    <br>
-                                    <input name="preco" id="preco" maxlength="100" type="text">
-                                </label>
-                                <br>
-                                <label>
-                                    Contato:
-                                    <br>
-                                    <input name="contato" id="contato" maxlength="100" type="text">
-                                </label>
-                                <br><br>
-                                <label>
-                                    Descrição (máximo de 250 caracteres):
-                                    <br>
-                                    <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                                </label>
-                                <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de eventos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                        <div id="simulador">
-                            <div class="card">
-                                    <h2>Simulador</h2>
-                                    <h3>Preencha:</h3>
-                                    <h3>Pessoas</h3>
-                                    <input id="pessoas_input" type="number" placeholder="Quantidade de pessoas" />
-                                    <h3>Valor</h3>
-                                    <input id="dinheiro" type="text" placeholder="Preço" />
-                                    <button class="btn" onclick="mostrar()">Simular</button><br>
-                                    <span id="valores"></span>
-                            </div>
 
-                            <a href="javascript:void(0)" onclick="Avaliar(1)">
-                                <img src="../assets/imgs/star0.png" id="s1"></a>
-                        
-                            <a href="javascript:void(0)" onclick="Avaliar(2)">
-                                <img src="../assets/imgs/star0.png" id="s2"></a>
-                        
-                            <a href="javascript:void(0)" onclick="Avaliar(3)">
-                                <img src="../assets/imgs/star0.png" id="s3"></a>
-                        
-                            <a href="javascript:void(0)" onclick="Avaliar(4)">
-                                <img src="../assets/imgs/star0.png" id="s4"></a>
-                        
-                            <a href="javascript:void(0)" onclick="Avaliar(5)">
-                                <img src="../assets/imgs/star0.png" id="s5"></a>
-                            <p id="rating">0</p>
-                        
-                        
-                            <br><br><br>
-                        
-                            <div class="graficos">
-                                <canvas id="myChart" width="20" height="20"></canvas>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+<div class="dash-right">
+
+    <div class="avisos">
+        <div class="container">
+            <h1>Fórum</h1>
+            <div class="div-form">
+                <form id="form_postagem" method="post" onsubmit="return publicar()">
+                    <label>
+                            Nome:
+                            <br>
+                            <input name="nome" id="nome" maxlength="100" type="text">
+                        </label>
+                        <br>
+                        <label>
+                            Pergunta:
+                            <br>
+                            <input name="pergunta" id="pergunta" maxlength="100" type="text">
+                        </label>
+                        <br>
+                        <label>
+                            Contato:
+                            <br>
+                            <input name="contato" id="contato" maxlength="100" type="text">
+                        </label>
+                        <br><br>
+                        <label>
+                            Descrição (máximo de 250 caracteres):
+                            <br>
+                            <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                        </label>
+                        <br>
+                    <button>Enviar</button>
+                </form>
             </div>
-
-
-
-
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
+            <h1>Mural de eventos</h1>
+            <div class="div-results">
+                <div id="feed_container" class="feed-container">
                 </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
 
-            <!-- AGUARDAR -->
-            <div id="div_aguardar" class="div-aguardar">
-                <img src="../assets/aguarde-orange.gif" id="img_aguarde">
-            </div>
-        </div>
-    </div>  
-
-    
-    
 </body>
 </html>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Splide("#main", {
-        type: "fade",
-        width: "75vw",
-        height: "100vh",
-        rewind: true,
-        speed: 1000,
-        easing: "ease",
-        autoplay: true,
-        interval: 2000,
-        resetProgress: false,
-        keyboard: "global",
-      }).mount();
-    });
-
-
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
     function limparFormulario() {
@@ -272,13 +92,9 @@
 
         var corpo = {
 
-            organizador: form_postagem.organizador.value,
-            evento: form_postagem.evento.value,
-            rua: form_postagem.rua.value,
-            cep: form_postagem.cep.value,
-            data: form_postagem.data.value,
-            hora: form_postagem.hora.value,
-            preco: form_postagem.preco.value,
+            
+            nome: form_postagem.nome.value,
+            pergunta: form_postagem.pergunta.value,
             contato: form_postagem.contato.value,
             descricao: form_postagem.descricao.value
         }
@@ -312,17 +128,17 @@
 
     }
 
-    function editar(idEvento) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idEvento;
-        console.log("cliquei em editar - " + idEvento);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idEvento);
+    function editar(idforum) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idforum;
+        console.log("cliquei em editar - " + idforum);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idforum);
         window.location = "/dashboard/edicao-aviso.html"
 
     }
 
-    function deletar(idEvento) {
-        console.log("Criar função de apagar post escolhido - ID" + idEvento);
-        fetch(`/avisos/deletar/${idEvento}`, {
+    function deletar(idforum) {
+        console.log("Criar função de apagar post escolhido - ID" + idforum);
+        fetch(`/avisos/deletar/${idforum}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -365,41 +181,26 @@
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
                         var spanId = document.createElement("span");
-                        var spanOrganizador = document.createElement("span");
-                        var spanEvento = document.createElement("span");
-                        var spanRua = document.createElement("span");
-                        var spanCep = document.createElement("span");
-                        var spanData = document.createElement("span");
-                        var spanHora = document.createElement("span");
-                        var spanPreco = document.createElement("span");
+                        var spanNome = document.createElement("span");
+                        var spanPergunta = document.createElement("span");
                         var spanContato = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
                         var btnEditar = document.createElement("button");
                         var btnDeletar = document.createElement("button");
 
-                        spanId.innerHTML = "ID: <b>" + publicacao.idEvento + "</b>";
-                        spanOrganizador.innerHTML = "Nome do Organizador: <b>" + publicacao.nomeOrganizador + "</b>";
-                        spanEvento.innerHTML = "Nome do Evento: <b>" + publicacao.nomeEvento + "</b>";
-                        spanRua.innerHTML = "Rua: <b>" + publicacao.rua + "</b>";
-                        spanCep.innerHMTL = "CEP: <b>" + publicacao.cep + "</b>";
-                        spanData.innerHTML = "Data: <b>" + publicacao.dt + "</b>";
-                        spanHora.innerHTML = "Hora: <b>" + publicacao.hora + "</b>";
-                        spanPreco.innerHTML = "Preço: <b>" + publicacao.preco + "</b>";
+                        spanId.innerHTML = "ID: <b>" + publicacao.idforum + "</b>";
+                        spanNome.innerHTML = "NOME: <b>" + publicacao.nome + "</b>";
+                        spanPergunta.innerHTML = "Pergunta: <b>" + publicacao.pergunta + "</b>";
                         spanContato.innerHTML = "Contato: <b>" + publicacao.contato + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanId.id = "inputNumero" + publicacao.idEvento;
-                        spanOrganizador.className = "publicacao-titulo";
-                        spanEvento.className = "publicacao-titulo";
-                        spanRua.className = "publicacao-titulo";
-                        spanCep.className = "publicacao-titulo";
-                        spanData.className = "publicacao-titulo";
-                        spanHora.className = "publicacao-titulo";
-                        spanPreco.className = "publicacao-titulo";
+                        spanId.id = "inputNumero" + publicacao.idforum;
+                        spanNome.className = "publicacao-titulo";
+                        spanPergunta.className = "publicacao-titulo";
                         spanContato.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
 
@@ -407,20 +208,15 @@
 
                         btnEditar.className = "publicacao-btn-editar"
                         btnEditar.id = "btnEditar" + publicacao.idEvento;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idEvento})`);
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idforum})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
                         btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idEvento})`);
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idforum})`);
 
                         divPublicacao.appendChild(spanId);
-                        divPublicacao.appendChild(spanOrganizador);
-                        divPublicacao.appendChild(spanEvento);
-                        divPublicacao.appendChild(spanRua);
-                        divPublicacao.appendChild(spanCep);
-                        divPublicacao.appendChild(spanData);
-                        divPublicacao.appendChild(spanHora);
-                        divPublicacao.appendChild(spanPreco);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(spanPergunta);
                         divPublicacao.appendChild(spanContato);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
@@ -454,166 +250,4 @@
 
         return false;
     }
-
-    function mostrar() {
-        var pessoas = Number(pessoas_input.value);
-        var valor = Number(dinheiro.value);
-        var total = pessoas * valor;
-        valores.innerHTML = `O valor total dos ingressos ficará R$ ${total.toFixed(2)}`;
-
-    }
-
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['5 Estrelas', '4 Estrelas', '3 Estrelas', '2 Estrelas', '1 Estrela'],
-            datasets: [{
-                label: 'Quantidade de votos',
-                data: [12, 10, 2, 1, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    function Avaliar(estrela) {
-
-var url = window.location;
-url = url.toString()
-url = url.split("index.html");
-url = url[0];
-
-var s1 = document.getElementById("s1").src;
-var s2 = document.getElementById("s2").src;
-var s3 = document.getElementById("s3").src;
-var s4 = document.getElementById("s4").src;
-var s5 = document.getElementById("s5").src;
-avaliacao = 0;
-
-if (estrela == 5){        
-if (s5 == url + "img/star0.png") {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star1.png";
-    document.getElementById("s4").src = "../assets/imgs/star1.png";
-    document.getElementById("s5").src = "../assets/imgs/star1.png";
-    avaliacao = 5;
-} else {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star1.png";
-    document.getElementById("s4").src = "../assets/imgs/star1.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 4;
-}}
-
-//ESTRELA 4
-if (estrela == 4){  
-if (s4 == url + "img/star0.png") {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star1.png";
-    document.getElementById("s4").src = "../assets/imgs/star1.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 4;
-} else {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star1.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 3;
-}}
-
-//ESTRELA 3
-if (estrela == 3){  
-if (s3 == url + "img/star0.png") {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star1.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 3;
-} else {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star0.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 2;
-}}
-
-//ESTRELA 2
-if (estrela == 2){  
-if (s2 == url + "img/star0.png") {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star1.png";
-    document.getElementById("s3").src = "../assets/imgs/star0.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 2;
-} else {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star0.png";
-    document.getElementById("s3").src = "../assets/imgs/star0.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 1;
-}}
-
-//ESTRELA 1
-if (estrela == 1){  
-if (s1 == url + "img/star0.png") {
-    document.getElementById("s1").src = "../assets/imgs/star1.png";
-    document.getElementById("s2").src = "../assets/imgs/star0.png";
-    document.getElementById("s3").src = "../assets/imgs/star0.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 1;
-} else {
-    document.getElementById("s1").src = "../assets/imgs/star0.png";
-    document.getElementById("s2").src = "../assets/imgs/star0.png";
-    document.getElementById("s3").src = "../assets/imgs/star0.png";
-    document.getElementById("s4").src = "../assets/imgs/star0.png";
-    document.getElementById("s5").src = "../assets/imgs/star0.png";
-    avaliacao = 0;
-}}
-
-document.getElementById('rating').innerHTML = avaliacao;
-localStorage.setItem('avaliacao', avaliacao);
-}
-
-
-function VerificaAvaliacao()
-{
-if (localStorage.getItem('avaliacao') != null)
-{
-Avaliar(localStorage.getItem('avaliacao'));
-}
-
-}
-
 </script>

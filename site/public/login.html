@@ -4,70 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotorCode</title>
-
-    <script src="./js/funcoes.js"></script>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cadastro.css">
-
+    <title>DigitalScience</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro-login.css">
 </head>
 <body>
-    <div class="header">
-        <img src="assets/imgs/moto-logo.png" alt="">
-        <div class="container"><br><p>MOTORCODE</p>
-            <ul>
-                <li> <a href="index.html"> Home</a></li>
-                <li> <a href="sobre nós.html"> Sobre nós</a></li>
-                |
-                <!-- <li> <a href="cadastro.html"> Cadastro</a></li> -->
-                <li> <a class="agora" href="#"> Login</a></li>
-            </ul>
+    <!-- <div class="header">
+        <div class="container">
+        <div class="logo_header">
+            <img src="../imagens/icone2.png" alt="">
+            <h1>Digital<br>Science</h1>
         </div>
-    </div>
-    
-    <div class="motinha">
-    <img src="assets/imgs/oie_50256ARCANd76.gif" style="width: 50vw; height: 100vh;" alt="">
-    </div>
-<div class="background">
-    <div class="card" >
-        <div class="conteudo" >
-            <p>E-mail:</p>
-            <input id="email_input" type="text" placeholder="digite o e-mail" >
-            <p>Senha:</p>
-            <input id="senha_input" type="password" placeholder="digite a senha" >
-            <!-- <button onclick="entrar()">Entrar</button> -->
-            <button onclick="entrar()">Entrar</button>
-            <p class="cor">Não tem uma conta? &nbsp;<a href="cadastro.html">Cadastre-se</a></p>
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/aguarde-orange.gif" id="loading-gif">
-            </div>
+        <ul>
+            <li><a href="SITE.html">Home</a></li>
+            <li><a href="Sobre_nós.html">Sobre nós</a></li> -->
+            <!-- <li><a href="Principais_temas.html">Principais Temas</a></li> -->
+            <!-- <li><a href="cadastro.html">Cadastro</a></li> -->
+            <!-- <li><a class="agora">Login</a></li> -->
+            <!-- <li><a class="agora" href="#"><button>Entrar</button></a></li>
+        </ul>
+        </div> -->
+    <!-- </div>
+    <div class="banner2">
+        <div class="container">
+           <div class="card">
+               <h1>Login</h1>
+               <h4>Email:</h4>
+            <input type="text" placeholder="Insira um email">
+               <h4>Senha:</h4>
+            <input type="password" placeholder="Insira sua senha">
+               <button class="btn"><a href="dashboard.html">Entrar</a></button><br>
+               <button class="btn"><a href="cadastro.html"> Voltar</a></button>
+           </div>
         </div>
-    </div>
+    </div> -->
 
-
-
-    <!-- <div class="card-laranja">
+        <div class="card-laranja">
         <div class="card-txt-cadastro">
             <h1>Seja Bem-Vindo</h1>
             <span>Como deseja se cadastrar?</span>
-            <a href="cadastro.html"><input class="btn-cad-moto" type="button" value="Cadastre seu moto clube" id="cadastro"></a>
-            <a href="login.html"><input class="btn-cad-usuario" type="button" value="cadastre o usuario" id="cadastro"></a>
+            <a href="cadastro.html"><input class="btn-cad-moto" type="button" value="Cadastre-se" id="cadastro"></a>
+            <a href="SITE.html"><input class="btn-cad-usuario" type="button" value="Voltar" id="cadastro"></a>
         </div>
     </div>
     
     <div class="fundo">
         <div class="card-black">
-            <div class="cadastro">
-                    
+            <div class="banner2">
+                <div class="container2">
+                   <div class="card2">
+                       <h1>Login</h1>
+                       <h4>Email:</h4>
+                    <input type="text" placeholder="Insira um email">
+                       <h4>Senha:</h4>
+                    <input type="password" placeholder="Insira sua senha">
+                       <button class="btn" onclick="entrar()">Entrar</button><br>
+                   </div>
+                </div>
             </div>
         </div>
-    </div>     -->
+    </div>    
 </div>    
 </body>
 </html>
 <script>
-
     function entrar() {
         aguardar();
 
@@ -136,5 +136,6 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
 </script>
+
+

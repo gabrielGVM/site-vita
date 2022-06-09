@@ -23,11 +23,11 @@ router.post("/publicar/:idUsuario", function (req, res) {
     avisoController.publicar(req, res);
 });
 
-router.put("/editar/:idEvento", function (req, res) {
+router.put("/editar/:idforum", function (req, res) {
     avisoController.editar(req, res);
 });
 
-router.delete("/deletar/:idEvento", function (req, res) {
+router.delete("/deletar/:idforum", function (req, res) {
     avisoController.deletar(req, res);
 });
 

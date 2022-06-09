@@ -4,144 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotorCode</title>
-
-    <script src="./js/funcoes.js"></script>
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cadastro.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
+    <title>DigitalScience</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro-login.css">
 </head>
 <body>
-    <div class="header">
-        <img src="assets/imgs/moto-logo.png" alt="">
-        <div class="container"><br><p>MOTORCODE</p>
-            <ul>
-                <li> <a href="index.html"> Home</a></li>
-                <li> <a href="sobre nós.html"> Sobre nós</a></li>
-                |
-                <!-- <li> <a class="agora" href="#"> Cadastro</a></li> -->
-                <li> <a href="login.html"> Login</a></li>
-            </ul>
+    <!-- <div class="header">
+        <div class="container">
+        <div class="logo_header">
+            <img src="../imagens/icone2.png" alt="">
+            <h1>Digital<br>Science</h1>
+        </div>
+        <ul>
+            <li><a href="SITE.html">Home</a></li>
+            <li><a href="Sobre_nós.html">Sobre nós</a></li>
+          
+            <li><a class="agora">Cadastro</a></li>
+           
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        </div>
+    </div> -->
+
+    <!-- <div class="banner2">
+        <div class="container">
+           <div class="card">
+               <h1>Cadastro</h1>
+                <h4>Nome:</h4>
+            <input id="ipt_nome" type="text" placeholder="Insira um nome">
+                <h4>Sobrenome:</h4>
+            <input id="ipt_sobrenome" type="text" placeholder="Insira seu sobrenome">
+                <h4>CPF</h4>
+            <input id="ipt_cpf" type="text" placeholder="Insira seu CPF">
+                <h4>Email:</h4>
+            <input id="ipt_email" type="text" placeholder="Insira um email">
+                <h4>Senha:</h4>
+            <input id="ipt_senha" type="password" placeholder="Insira sua senha">
+            <button onclick="validacaao()" class="btn"><a href="login.html">Entrar</a></button>
+           </div>
+        </div>
+    </div> -->
+
+    <div class="card-laranja2">
+        <div class="card-txt-cad">
+            <h1>Seja Bem-Vindo</h1>
+            <span>Como deseja se cadastrar?</span>
+            <a href="login.html"><input class="btn-cad-moto" type="button" value="Logar" id="cadastro"></a>
+            <a href="SITE.html"><input class="btn-cad-usuario" type="button" value="Voltar" id="cadastro"></a>
         </div>
     </div>
-
-
-    <div class="motinha">
-        <img src="assets/imgs/oie_50256ARCANd76.gif" style="width: 50vw; height: 100vh;" alt="">
-        </div>
-
-        <!-- CARD DE AVISO DE ERRO -->
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+    
+    <div class="fundo">
+        <div class="card-black2">
+            <div class="cadastro">
             </div>
-        </div>
-
-
-<div class="background">
-    <div class="card" >
-        <div class="conteudo" >
-            <select name="" id="select_cadastro">
-                <option value="">--TIPO DE CADASTRO--</option>
-                <option value="Usuario">Usuário</option>
-                <option value="Motoclube">Moto Clube</option>
-            </select>
-            <p>Nome:</p> 
-            <input id="nome_input" type="text" placeholder="digite o nome" >
-            <p>CPF:</p>
-            <input id="cpf_input" type="text" placeholder="CPF do representante" >
-            <p>E-mail:</p>
-            <input id="email_input" type="text" placeholder="digite o e-mail" >
-            <p>Senha:</p>
-            <input id="senha_input" type="password" placeholder="digite a senha" >
-            <p>Confirme a senha:</p>
-            <input id="confirmacao_senha_input" type="password" placeholder="digite a senha" >
             
-            <button onclick="cadastrar()" >Cadastrar</button>
-            <p class="cor">Já tem uma conta? &nbsp;<a href="login.html">Logar</a></p>
-
-            <div id="div_aguardar" class="loading-div">
-                <img src="./assets/aguarde-orange.gif" id="loading-gif">
+                <div class="banner2">
+                    <div class="container2">
+                       <div class="card2">
+                           <h1>Cadastro</h1>
+                            <h4>Nome:</h4>
+                        <input id="ipt_nome" type="text" placeholder="Insira um nome">
+                            <h4>Sobrenome:</h4>
+                        <input id="ipt_sobrenome" type="text" placeholder="Insira seu sobrenome">
+                            <h4>CPF</h4>
+                        <input id="ipt_cpf" type="text" placeholder="Insira seu CPF">
+                            <h4>Email:</h4>
+                        <input id="ipt_email" type="text" placeholder="Insira um email">
+                            <h4>Senha:</h4>
+                        <input id="ipt_senha" type="password" placeholder="Insira sua senha">
+                        <button onclick="cadastrar()" class="btn">Entrar</button>
+                       </div>
+                    </div>
+                </div>
+            
             </div>
-
         </div>
-    </div>
-</div>    
+    </div>  
 </body>
 </html>
 <script>
+    function cadastrar(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nome = req.body.nomeServer;
+    var cpf = req.body.cpfServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
 
-    function cadastrar() {
-        aguardar();
-
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var tipoVar = select_cadastro.value;
-        var nomeVar = nome_input.value;
-        var cpfVar = cpf_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-        if (nomeVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                tipoServer: tipoVar,
-                nomeServer: nomeVar,
-                cpfServer: cpfVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-                
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
+    // Faça as validações dos valores
+     if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (cpf == undefined) {
+        res.status(400).send("Seu CPF está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar(nome, cpf, email, senha)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
+}
 </script>
+

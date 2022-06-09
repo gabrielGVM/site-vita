@@ -1,0 +1,158 @@
+/* .banner2{
+    background-color: #2c2c2cbc;
+    height: 630px;
+    background-image: url("../imagens/pexels-cottonbro-9665193.jpg");
+} */
+.banner2 .card2{
+    background: rgba(235, 234, 234, 0.063);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    /* border: 3px solid #1f0243; */
+    height: 600px;
+    width: 525px;
+    margin-left: 38%;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px;
+    }
+
+.btn{
+    font-family: monospace;
+    margin-top: 15px;
+    /* background-image: linear-gradient(to right, rgba(20, 15, 15, 0), rgb(242, 239, 239));
+    background-image: linear-gradient(-90deg, purple, #7fff7f);
+    color: rgb(101, 22, 45);
+    background-color: rgba(0, 0, 0, 0.497); */
+    background-color: #32b8cdbb;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 290px;
+    line-height: 30px;
+    padding: 0 20px;
+    text-transform: lowercase;
+    font-weight: bold;
+    border-radius: 10px;
+    transform: scale(1.05);
+    box-shadow: 1px 1px 5px #32b8cdbc;
+    /* background-image: url(imagens/Cienccia02.jpg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; */
+}
+
+.btn a {
+    color: rgb(21, 21, 21);
+    text-decoration: none;
+    /* text-shadow: 50px 50px 65px #338fbd; */
+    /* text-decoration-color: black; */
+}
+
+input{
+    height: 29px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+}
+/* .container .btn{
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+} */
+
+.card-laranja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #32b8cdbb;
+    width: 40%;
+    height: 100vh;
+    float: left;
+    color: #ffffff;
+    box-shadow: 0 1px 5px #000000;
+}
+
+.card-laranja2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #32b8cdbb;
+    width: 40%;
+    height: 100vh;
+    float: right;
+    color: #ffffff;
+    box-shadow: 0 1px 5px #000000;
+}
+
+.card-txt-cadastro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35vw;
+    height: 80vh;
+}
+
+.card-black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #32b8cdbb; */
+    width: 40%;
+    height: 100vh;
+    float: right;
+    color: #ffffff;
+    /* box-shadow: 0 1px 5px #000000; */
+}
+
+.card-black2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #32b8cdbb; */
+    width: 40%;
+    height: 100vh;
+    float: right;
+    color: #ffffff;
+    /* box-shadow: 0 1px 5px #000000; */
+}
+
+.card-txt-cad{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35vw;
+    height: 80vh;
+}
+
+.btn-cad-moto{
+    border-radius: 7px;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 0.85em;
+    margin-top: 5vh;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.btn-cad-usuario{
+    color: #000000;
+    border-radius: 7px;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.fundo{
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

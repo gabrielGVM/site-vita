@@ -3,29 +3,22 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 /* para workbench - local - desenvolvimento */
 
-CREATE DATABASE motorcode;
+CREATE DATABASE digitalscience;
 
-USE motorcode;
+USE digitalscience;
 
 CREATE TABLE usuario (
 idUsuario INT PRIMARY KEY auto_increment,
-tipoCadastro VARCHAR(20),
-CHECK (tipoCadastro = 'Motoclube' OR tipoCadastro = 'Usuario'),
 nome VARCHAR(80),
 cpf CHAR(11),
 email VARCHAR(80),
 senha CHAR(8)
 );
 
-CREATE TABLE evento (
-idEvento INT PRIMARY KEY AUTO_INCREMENT,
-nomeOrganizador VARCHAR(80),
-nomeEvento VARCHAR(80),
-rua VARCHAR(100),
-cep CHAR(8),
-dt DATE,
-hora TIME,
-preco DECIMAL(10,2),
+CREATE TABLE forum (
+idforum INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(80),
+pergunta VARCHAR(80),
 contato VARCHAR(80),
 descricao VARCHAR(250),
 fkUsuario INT,
